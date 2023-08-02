@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.navbar {
+  height: 100px;
+  background-color: blanchedalmond;
+  color:black;
+  margin-bottom:15px;
+  font-size:30px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}

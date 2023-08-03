@@ -8,3 +8,29 @@
   justify-content: center;
   align-items: center;
 }
+.TodoList{
+  background-color: white;
+  margin: auto;
+  width: 50%;
+  display: fles;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #efefef;
+  padding: 30px;
+  box-shadow: 
+  0 0 10px rgba(0, 0, 0, 0.2), /* First shadow */
+  0 4px 8px rgba(0, 0, 0, 0.4), /* Second shadow */
+  0 8px 16px rgba(0, 0, 0, 0.6); /* Third shadow */
+}
+.TodoItem{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px 20px 0;
+  width: 70%;
+  border-bottom: 2px solid #eee;
+  font-family:sans-serif;
+  font-weight:100;
+  font-size:15px;
+  color:#333333;
+}

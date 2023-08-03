@@ -1,22 +1,13 @@
-import React from "react";
-import Header from "./Components/Header";
+import React from 'react';
+import jokesData from './Components/jokesData';
+import Joke from './Components/Joke';
 
 function App(){
-  return(
+  const jokesComponent=jokesData.map(joke => <Joke question={joke.question} punchline={joke.punchline}/>)
+  return (
     <div>
-      <Header/>
-      <input type="checkbox" name="myCheckbox" value='Put some extra time' 
-    checked={true} onChange={() => {}} ></input><span>Put some extra time</span><br></br>
-    <input type="checkbox" name="myCheckbox" value='Put some extra time' 
-    checked={true} onChange={() => {}} ></input><span>Belive in Yourself and keep working </span><br></br>
-    <input type="checkbox" name="myCheckbox" value='Put some extra time' 
-    checked={true} onChange={() => {}} ></input><span>Allah Knows your Intention </span><br></br>
-    <input type="checkbox" name="myCheckbox" value='Put some extra time' 
-    checked={true} onChange={() => {}} ></input><span>You are born to serve the community</span>
-    
+      {jokesComponent}
     </div>
-    
   )
 }
-
 export default App;

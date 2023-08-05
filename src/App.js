@@ -1,19 +1,34 @@
-// Handling events in the React
 
-import React from 'react'
+// State handling  in the React its an interesitng topic to learn.
 
-function App(){
-  return(
-    <div>
-<img
-  src='https://images.pexels.com/photos/15831931/pexels-photo-15831931/free-photo-of-watching-the-bay.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  style={{ width: '100%', height: 'auto' }}
-  onMouseOver={() => console.log('Hoverd')}
-/>
-      <br/>
-      <br/>
-      <button onClick={() => console.log('clicked')}>Dare to Hit me</button>
-    </div>
-  )
+
+import React from 'react';
+
+class App extends React.Component{
+  constructor(){
+    super();
+    this.state={
+      count:0
+    }
+    this.handleClick= this.handleClick.bind(this);
+  }
+  handleClick(){
+    this.setState(prevState =>{
+      return{
+        count:prevState.count+1
+      }
+    });
+  }
+  render(){
+    return(
+      <div>
+        <h1>
+          {this.state.count}
+        </h1>
+        <button onClick={this.handleClick}>Change</button>
+      </div>
+    )
+  }
 }
+
 export default App;

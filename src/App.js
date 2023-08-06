@@ -41,41 +41,71 @@
 
 // export default App;
 
-import React from 'react';
-import TodosData from './Components/TodosData';
-import TodoItem from './Components/TodoItem';
-import Header from './Components/Header';
+// 
+// import React from 'react';
+// import Conditional from './Components/Conditional';
 
-class App extends React.Component{
-  constructor(){
-    super()
+
+// // In conditional rendering we can use ternary operators and we 
+// // we also can use and operator for the conditonal rendering 
+// // its an interesting topic for advance level development.
+
+// class App extends React.Component{
+//   constructor(){
+//     super()
+//     this.state={
+//       isLoading:true
+//     }
+//   }
+//   componentDidMount(){
+//     setTimeout(()=>{
+//       this.setState({
+//         unreadMessages:['ere']
+//       })
+//     },100)
+//   }
+//   render(){
+//     return(
+//       <div>
+//          {
+//          this.state.unreadMessages && (
+//         <h2>you have {this.state.unreadMessages.length} unread unreadMessages
+//         </h2>) }
+      
+//       </div>
+     
+//     )
+//   }
+// }
+// export default App;
+
+
+import React from "react";
+
+class App extends React.Component {
+  constructor() {
+    super();
     this.state = {
-      todos:TodosData
-    }
-    this.handleClick=this.handleClick.bind(this)
+      loggedIn: true,
+    };
+    this.handleClick = this.handleClick.bind(this);
   }
-  handleClick(id){
-    this.setState(prevState =>{
-      const updatedtodo=prevState.todos.map(todo => {
-        if(todo.id === id){
-          todo.completed =!todo.completed
-        }
-        return todo;
 
-        })
-        return {todos:updatedtodo}
-    })
+  handleClick() {
+    this.setState((prevState) => {
+      return { loggedIn: !prevState.loggedIn };
+    });
   }
-  render(){
-    const todo=this.state.todos.map(item => 
-    <TodoItem key={item.id} item={item}
-    handleClick={this.handleClick}/>)
-    return(
-      <div className='TodoList'>
-        <Header/>
-        {todo}
+
+  render() {
+    return (
+      <div>
+        {this.state.loggedIn ? <h1>You are logged In</h1> : <h1>You are logged Out</h1>}
+        <button onClick={this.handleClick}>Toggle Status</button>
       </div>
-    )
+    );
   }
 }
+
 export default App;
+

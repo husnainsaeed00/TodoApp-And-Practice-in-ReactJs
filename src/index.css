@@ -1,15 +1,16 @@
 .navbar {
-  height: 100px;
-  background-color: blanchedalmond;
+  height: 50px;
+  background-color: #efefef;
   color:black;
   margin-bottom:15px;
-  font-size:10px;
+  font-size:12px;
   display:flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
 }
 .TodoList{
-  background-color: white;
+  background-color: rgb(233, 163, 177);
   margin: auto;
   width: 50%;
   display: fles;

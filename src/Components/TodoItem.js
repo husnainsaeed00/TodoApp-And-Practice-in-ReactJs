@@ -3,11 +3,16 @@ import React from 'react';
 
 
 function TodoItem(props){
+    const completedStyle = {
+        fontStyle:'italic',
+        color:'gray',
+        textDecoration:'line-through'
+    }
     return(
         <div className='TodoItem'>
             <input type="checkbox" checked={props.item.completed}
             onChange={() =>props.handleClick(props.item.id)}></input>
-            <span>{props.item.text}</span><br></br>
+            <span style={props.item.completed ? completedStyle : null}>{props.item.text}</span><br></br>
         </div>
     )
 }
